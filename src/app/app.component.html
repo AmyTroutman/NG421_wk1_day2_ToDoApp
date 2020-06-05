@@ -1,5 +1,5 @@
 <h1 align="center">Todo List</h1>
-<input type="text"  class="todo-input border-info m-2" placeholder="Add next todo here" [(ngModel)]="todoTitle" (keyup.enter)=addTodo()>
+<input type="text" class="todo-input border-info m-2" placeholder="Add next todo here" [(ngModel)]="todoTitle" (keyup.enter)=addTodo()>
 <ul align="center" class="list-group m-2">
     <li class="list-group-item bg-info" *ngFor="let todo of todoList">
         <div class="view">
