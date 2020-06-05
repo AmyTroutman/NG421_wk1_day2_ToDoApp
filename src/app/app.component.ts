@@ -14,20 +14,26 @@ export class AppComponent {
   ngOnInit() {
     this.todoTitle = '';
     this.todoList = [
-      { title: 'Install Angular CLI', isDone: false},
+      { title: 'Install Angular CLI', isDone: false, created: new Date()},
     ];
   }
 
   addTodo(): void {
     this.todoList.push({
       title: this.todoTitle,
-      isDone: false
+      isDone: false,
+      created: new Date()
     });
 
     this.todoTitle = '';
   }
+
   deleteTodo(todo: any) {
     const index = this.todoList.findIndex(todoItem => todoItem === todo);
     this.todoList.splice(index, 1);
+  }
+
+  complete(todo: any): void {
+    todo.isDone = !todo.isDone;
   }
 }
