@@ -18,6 +18,14 @@ export class AppComponent {
     ];
   }
 
+  addTodo(): void {
+    this.todoList.push({
+      title: this.todoTitle,
+      isDone: false
+    });
+
+    this.todoTitle = '';
+  }
   deleteTodo(todo: any) {
     const index = this.todoList.findIndex(todoItem => todoItem === todo);
     this.todoList.splice(index, 1);
